@@ -14,7 +14,20 @@
 
 		$servicoDAO->incluirServico($servico);
 
-		// header("Location:controllerAutor.php?opcao=2");
-		echo "Sucesso! Serviço incluso.";
+		 header("Location:servicoController.php?opcao=2");
+		//echo "Sucesso! Serviço incluso.";
+	}
+	if($opcao==2){
+		
+		$servicoDao = new servicoDAO();
+
+		$lista = $servicoDao->getServicos();
+
+		session_start();
+
+		$_SESSION['servicos'] = $lista;
+
+		header("Location:../View/Servico/exibir_servicos.php");
+
 	}
 ?>

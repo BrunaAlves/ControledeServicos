@@ -5,22 +5,22 @@
 		public $nome;
 		public $valor;
 		public $descricao;
-		public $tipo;
+		public $id_tipo;
 
-		public function setServico($id,$nome,$valor,$descricao, $tipo)
+		public function setServico($id,$nome,$valor,$descricao, $id_tipo)
 		{
 			$this->servico_id = $id;
 			$this->nome = $nome;
 			$this->valor = $valor;
 			$this->descricao = $descricao;
-			$this->tipo = $tipo;
+			$this->id_tipo = $id_tipo;
 		}
 
-		function Servico($nome,$valor,$descricao, $tipo){
+		function Servico($nome,$valor,$descricao, $id_tipo){
 			$this->nome = $nome;
 			$this->valor = $valor;
 			$this->descricao = $descricao;
-			$this->tipo = $tipo;
+			$this->id_tipo = $id_tipo;
 		}
 
 		public function getServico_id(){
@@ -54,12 +54,12 @@
 		public function setDescricao($pDescricao){
 			return $this->descricao = $pDescricao;
 		}
-		public function getTipo(){
+		public function getId_tipo(){
 			return $this->tipo;
 		}
 
-		public function setTipo($pTipo){
-			return $this->tipo = $pTipo;
+		public function setId_tipo($pIdTipo){
+			return $this->id_tipo = $pIdTipo;
 		}
 
 	}

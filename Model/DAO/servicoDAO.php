@@ -16,10 +16,19 @@
 			$sql->bindValue(':nom', $servico->getNome());
 			$sql->bindValue(':val', $servico->getValor());	
 			$sql->bindValue(':desc', $servico->getDescricao());	
-			$sql->bindValue(':tip', $servico->getTipo());	
+			$sql->bindValue(':tip', $servico->getId_tipo());	
 			$sql->execute();
 		}
+		public function getServicos(){
+			$rs = $this->con->query("SELECT * FROM servicos");
 
+			$lista = array();
+			while($servicos=$rs->fetch(PDO::FETCH_OBJ)){
+				$lista[] = $servicos;
+			}
+
+			return $lista;
+		}
 
 }
 
