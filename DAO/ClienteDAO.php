@@ -74,7 +74,7 @@
       	{
              $sql = $this->con->prepare("UPDATE clientes SET Nome = :nom, Tipo_user = :tip, Endereco = :ende, Telefone = :tel, CPF = :cpf, DtNascimento = :nasc, Email = :email, Senha = :senha WHERE CodCli = :id");
              $sql->bindValue(':nom', $cliente->getNome());
-			$sql->bindValue(':tip', $cliente->getTipo_User());
+			$sql->bindValue(':tip', $cliente->getTipoUser());
 			$sql->bindValue(':end', $cliente->getEndereco());
 			$sql->bindValue(':tel', $cliente->getTelefone());
 			$sql->bindValue(':cpf', $cliente->getCpf());
