@@ -27,8 +27,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `clientes` (
-  `CodCli` decimal(4,0) DEFAULT NULL,
+  `CodCli` int(10) AUTO_INCREMENT PRIMARY KEY,
   `Nome` varchar(50) DEFAULT NULL,
+  `Tipo_user` int(1) NOT NULL,
   `Endereco` varchar(50) DEFAULT NULL,
   `Telefone` varchar(20) DEFAULT NULL,
   `CPF` varchar(13) DEFAULT NULL,
@@ -41,28 +42,29 @@ CREATE TABLE `clientes` (
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`CodCli`, `Nome`, `Endereco`, `Telefone`, `CPF`, `DtNascimento`, `Email`, `Senha`) VALUES
-('1234', 'Orígenes Lessa', NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
-('1235', 'Rachel de Queiroz', NULL, '1234-5679', NULL, '1910-11-17 00:00:00', NULL, NULL),
-('1236', 'Dias Gomes', NULL, '1234-5671', NULL, '1922-10-19 00:00:00', NULL, NULL),
-('1237', 'Raul Pompéia', NULL, '1234-5672', NULL, '1863-04-12 00:00:00', NULL, NULL),
-('1238', 'Rui Barbosa', NULL, '1234-5673', NULL, '1849-11-05 00:00:00', NULL, NULL),
-('1239', 'Ariano Suassuna', NULL, '1234-5677', NULL, '1927-06-16 00:00:00', NULL, NULL),
-('1230', 'Aurélio Buarque de Holanda', NULL, '1234-5674', NULL, '1910-05-02 00:00:00', NULL, NULL),
-('1231', 'Luis Fernando Veríssimo', NULL, '1234-5675', NULL, '1936-09-26 00:00:00', NULL, NULL),
-('1232', 'Tobias Barreto', NULL, '1234-5680', NULL, '1839-06-07 00:00:00', NULL, NULL),
-('1233', 'José de Alencar', NULL, '1234-5681', NULL, '1829-05-01 00:00:00', NULL, NULL),
-('4321', 'Olavo Bilac', NULL, '1234-5682', NULL, '1865-12-16 00:00:00', NULL, NULL),
-('4322', 'Lygia Fagundes Telles', NULL, '1234-5678', NULL, '1923-04-19 00:00:00', NULL, NULL),
-('4323', 'Lima Barreto', NULL, '1234-5683', NULL, '1881-05-13 00:00:00', NULL, NULL),
-('4324', 'Jorge Amado', NULL, '1234-5684', NULL, '1912-08-10 00:00:00', NULL, NULL),
-('4325', 'Machado de Assis', NULL, '1234-5685', NULL, '1839-06-21 00:00:00', NULL, NULL),
-('4326', 'Gregório de Matos Guerra', NULL, '1234-5686', NULL, '1623-04-07 00:00:00', NULL, NULL),
-('4327', 'Euclides da Cunha', NULL, '1234-5687', NULL, '1866-01-20 00:00:00', NULL, NULL),
-('4328', 'João Cabral de Melo Neto', NULL, '1234-5688', NULL, '1920-01-09 00:00:00', NULL, NULL),
-('4329', 'João Ubaldo Ribeiro', NULL, '1234-5670', NULL, '1941-01-23 00:00:00', NULL, NULL),
-('4330', 'Otto Lara Resende', NULL, '1234-5689', NULL, '1922-05-01 00:00:00', NULL, NULL),
-('4331', 'Castro Alves', NULL, '1234-5690', NULL, '1847-03-14 00:00:00', NULL, NULL);
+INSERT INTO `clientes` (`Nome`, `Tipo_user`, `Endereco`, `Telefone`, `CPF`, `DtNascimento`, `Email`, `Senha`) VALUES
+('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
+('Orígenes Lessa',1, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
+('Rachel de Queiroz',1, NULL, '1234-5679', NULL, '1910-11-17 00:00:00', NULL, NULL),
+('Dias Gomes',1, NULL, '1234-5671', NULL, '1922-10-19 00:00:00', NULL, NULL),
+('Raul Pompéia',1, NULL, '1234-5672', NULL, '1863-04-12 00:00:00', NULL, NULL),
+('Rui Barbosa',1, NULL, '1234-5673', NULL, '1849-11-05 00:00:00', NULL, NULL),
+('Ariano Suassuna',1, NULL, '1234-5677', NULL, '1927-06-16 00:00:00', NULL, NULL),
+('Aurélio Buarque de Holanda',1, NULL, '1234-5674', NULL, '1910-05-02 00:00:00', NULL, NULL),
+('Luis Fernando Veríssimo',1, NULL, '1234-5675', NULL, '1936-09-26 00:00:00', NULL, NULL),
+('Tobias Barreto',1, NULL, '1234-5680', NULL, '1839-06-07 00:00:00', NULL, NULL),
+('José de Alencar',1, NULL, '1234-5681', NULL, '1829-05-01 00:00:00', NULL, NULL),
+('Olavo Bilac',1, NULL, '1234-5682', NULL, '1865-12-16 00:00:00', NULL, NULL),
+('Lygia Fagundes Telles',1, NULL, '1234-5678', NULL, '1923-04-19 00:00:00', NULL, NULL),
+('Lima Barreto',1, NULL, '1234-5683', NULL, '1881-05-13 00:00:00', NULL, NULL),
+('Jorge Amado',1, NULL, '1234-5684', NULL, '1912-08-10 00:00:00', NULL, NULL),
+('Machado de Assis',1, NULL, '1234-5685', NULL, '1839-06-21 00:00:00', NULL, NULL),
+('Gregório de Matos Guerra',1, NULL, '1234-5686', NULL, '1623-04-07 00:00:00', NULL, NULL),
+('Euclides da Cunha',1, NULL, '1234-5687', NULL, '1866-01-20 00:00:00', NULL, NULL),
+('João Cabral de Melo Neto',1, NULL, '1234-5688', NULL, '1920-01-09 00:00:00', NULL, NULL),
+('João Ubaldo Ribeiro',1, NULL, '1234-5670', NULL, '1941-01-23 00:00:00', NULL, NULL),
+('Otto Lara Resende',1, NULL, '1234-5689', NULL, '1922-05-01 00:00:00', NULL, NULL),
+('Castro Alves',1, NULL, '1234-5690', NULL, '1847-03-14 00:00:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -84,7 +86,7 @@ CREATE TABLE `datasdisponiveis` (
 --
 
 CREATE TABLE `servicos` (
-  `id_servico` int(11) NOT NULL,
+  `id_servico` int(11) AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(50) NOT NULL,
   `valor` float NOT NULL,
   `descricao` text NOT NULL,
