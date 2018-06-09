@@ -52,6 +52,14 @@
 			$sql->execute();
 		}
 
+		public function excluirServico($id){
+
+			$sql=$this->con->prepare("delete from servicos where id_servico= :id");
+
+			$sql->bindValue(':id', $id);
+			$sql->execute();
+		}
+
 
 }
 

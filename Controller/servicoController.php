@@ -53,4 +53,13 @@
 
 		header("Location:servicoController.php?opcao=2");
 	}
+	if($opcao==5){
+		$id = (int)$_REQUEST['id'];
+
+		$servicoDao = new servicoDAO();
+
+		$servicoDao->excluirServico($id);
+
+		header("Location:servicoController.php?opcao=2");
+	}
 ?>

@@ -39,7 +39,7 @@
                 <td><?=$serv->descricao; ?></td>
                 <td><?=$serv->id_tipo; ?></td>
                 <td><a href='..\..\Controller\ServicoController.php?opcao=3&id=<?=$serv->id_servico; ?>' >A</a></td>
-                <td>X</td>
+                <td><a href='..\..\Controller\ServicoController.php?opcao=5&id=<?=$serv->id_servico; ?>' >X</a></td>
               </tr>
           <?php
           }
