@@ -27,7 +27,7 @@
 			return $this->servico_id;
 		}
 
-		public function setAutor_id($pId){
+		public function setServico_id($pId){
 			return $this->servico_id = $pId;
 		}
 
@@ -55,7 +55,7 @@
 			return $this->descricao = $pDescricao;
 		}
 		public function getId_tipo(){
-			return $this->tipo;
+			return $this->id_tipo;
 		}
 
 		public function setId_tipo($pIdTipo){
