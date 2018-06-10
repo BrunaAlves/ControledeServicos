@@ -2,6 +2,7 @@
 
 	require_once('conexao.inc');
 	require_once('..\Model\servico.php');
+	require_once('..\Model\DataDisponivel.php');
 
 	class servicoDAO{
 
@@ -10,7 +11,8 @@
 			$this->con = $c->getConexao();
 		}
 
-		public function incluirServico(Servico $servico){
+		public function incluirServico(Servico $servico, Array $datadisp){
+			$arrayLimpo = array_filter($datadisp); //pega somente as colunas preenchidas, ignorando vazio ou null
 			$sql = $this->con->prepare("insert into servicos (nome, valor, descricao, id_tipo) values (:nom, :val, :desc, :tip)");
 
 			$sql->bindValue(':nom', $servico->getNome());
@@ -18,6 +20,17 @@
 			$sql->bindValue(':desc', $servico->getDescricao());	
 			$sql->bindValue(':tip', $servico->getId_tipo());	
 			$sql->execute();
+			$last_id = $this->con->lastInsertId();
+
+
+			for($i = 0; $i < count($arrayLimpo); $i++) {
+				$sqlData = $this->con->prepare("insert into datasdisponiveis (id_servico, data, disponivel) values (:idse, :dat, 0)");
+				$sqlData->bindValue(':idse', $last_id);
+				$sqlData->bindValue(':dat', $arrayLimpo[$i]);		
+				
+				$sqlData->execute();
+			}
+			
 		}
 		public function getServicos(){
 			$rs = $this->con->query("SELECT * FROM servicos");

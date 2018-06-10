@@ -8,14 +8,15 @@
 
 	if($opcao == 1){
 
-		$servico = new Servico($_POST["nome"],(int)$_POST["valor"],$_POST["descricao"],$_POST["tipo"]);
+		$servico = new Servico($_POST["nome"],$_POST["valor"],$_POST["descricao"],$_POST["tipo"]);
 
+		$datadisp = $_POST["data"];
 		$servicoDAO = new servicoDAO();
 
-		$servicoDAO->incluirServico($servico);
+		$servicoDAO->incluirServico($servico, $datadisp);
 
 		 header("Location:servicoController.php?opcao=2");
-		//echo "Sucesso! Serviço incluso.";
+
 	}
 	if($opcao==2){
 		
