@@ -63,4 +63,18 @@
 
 		header("Location:servicoController.php?opcao=2");
 	}
+	if($opcao==6){
+		$servicoDao = new servicoDAO();
+
+		$lista = $servicoDao->getServicosDetalhados();
+		$lista2 = $servicoDao->retornaDatas();
+
+		session_start();
+
+		$_SESSION['servicos'] = $lista;
+		$_SESSION['datas'] = $lista2;
+
+		header("Location:../BuscaServico.php");
+
+	}
 ?>

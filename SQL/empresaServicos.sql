@@ -43,7 +43,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`Nome`, `Tipo_user`, `Endereco`, `Telefone`, `CPF`, `DtNascimento`, `Email`, `Senha`) VALUES
-('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
+('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', 'admin', 'admin'),
 ('Orígenes Lessa',1, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
 ('Rachel de Queiroz',1, NULL, '1234-5679', NULL, '1910-11-17 00:00:00', NULL, NULL),
 ('Dias Gomes',1, NULL, '1234-5671', NULL, '1922-10-19 00:00:00', NULL, NULL),

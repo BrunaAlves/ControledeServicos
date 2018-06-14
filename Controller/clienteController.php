@@ -21,7 +21,7 @@
                         $lista = $clienteDao->getClientes();
                         session_start();
                         $_SESSION['clientes'] = $lista;
-                        header("Location:../View/Cliente/exibirClientes.php");
+                        header("Location:clienteController.php?opcao=6&pagina=1");
                         break;
                         
                    case 3:

@@ -73,7 +73,30 @@
 			$sql->execute();
 		}
 
+		//RETORNA TODOS OS SERVIÇOS DETALHADOS
+		public function getServicosDetalhados(){
+			
+			$sql = $this->con->prepare("SELECT s.id_servico id, s.nome nome, t.nome tipo, s.valor valor FROM tipo t INNER JOIN servicos s ON t.id_tipo = s.id_tipo INNER JOIN datasdisponiveis d ON s.id_servico = d.id_servico GROUP BY s.id_servico
+");
+			
+			$sql->execute();
+			$lista = array();
+			while($servicos = $sql->fetch(PDO::FETCH_OBJ)){
+				$lista[] = $servicos;
+			}
+			return $lista;
+		}
 
+		public function retornaDatas(){
+			$sql = $this->con->prepare("SELECT d.data as data, s.id_servico as id FROM tipo t INNER JOIN servicos s ON t.id_tipo = s.id_tipo INNER JOIN datasdisponiveis d ON s.id_servico = d.id_servico");
+			
+			$sql->execute();
+			$lista = array();
+			while($datas = $sql->fetch(PDO::FETCH_OBJ)){
+				$lista[] = $datas;
+			}
+			return $lista;
+		}
 }
 
 	
