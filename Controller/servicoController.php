@@ -64,9 +64,11 @@
 		header("Location:servicoController.php?opcao=2");
 	}
 	if($opcao==6){
+		$id = (int)$_REQUEST['id'];
+		
 		$servicoDao = new servicoDAO();
 
-		$lista = $servicoDao->getServicosDetalhados();
+		$lista = $servicoDao->getServicosDetalhados($id);
 		$lista2 = $servicoDao->retornaDatas();
 
 		session_start();

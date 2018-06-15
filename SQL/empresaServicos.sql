@@ -43,7 +43,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`Nome`, `Tipo_user`, `Endereco`, `Telefone`, `CPF`, `DtNascimento`, `Email`, `Senha`) VALUES
-('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', 'admin', 'admin'),
+('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
 ('Orígenes Lessa',1, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
 ('Rachel de Queiroz',1, NULL, '1234-5679', NULL, '1910-11-17 00:00:00', NULL, NULL),
 ('Dias Gomes',1, NULL, '1234-5671', NULL, '1922-10-19 00:00:00', NULL, NULL),
@@ -74,7 +74,7 @@ INSERT INTO `clientes` (`Nome`, `Tipo_user`, `Endereco`, `Telefone`, `CPF`, `DtN
 
 CREATE TABLE `datasdisponiveis` (
   `id_servico` int(11) NOT NULL,
-  `id_disponibilidade` int(11) NOT NULL,
+  `id_disponibilidade` int(11) AUTO_INCREMENT PRIMARY KEY,
   `data` date NOT NULL,
   `disponivel` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -100,7 +100,7 @@ CREATE TABLE `servicos` (
 --
 
 CREATE TABLE `tipo` (
-  `id_tipo` int(11) NOT NULL,
+  `id_tipo` int(11) AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(30) NOT NULL,
   `valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -126,14 +126,14 @@ CREATE TABLE `vendas` (
 --
 -- Indexes for table `datasdisponiveis`
 --
-ALTER TABLE `datasdisponiveis`
-  ADD PRIMARY KEY (`id_disponibilidade`);
+--  ALTER TABLE `datasdisponiveis`
+--  ADD PRIMARY KEY (`id_disponibilidade`);
 
 --
 -- Indexes for table `tipo`
 --
-ALTER TABLE `tipo`
-  ADD PRIMARY KEY (`id_tipo`);
+-- ALTER TABLE `tipo`
+-- ADD AUTO_INCREMENT PRIMARY KEY (`id_tipo`);
 
 --
 -- Indexes for table `vendas`
