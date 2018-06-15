@@ -1,8 +1,4 @@
-<?php
-    // header('Content-Type: text/html; charset=ISO-8859-1');
-     //require_once('autenticar.inc');
-     require_once('..\..\Model\Servico.php');
-?>
+
 <HTML>
 <HEAD>
  <TITLE>Serviços</TITLE>

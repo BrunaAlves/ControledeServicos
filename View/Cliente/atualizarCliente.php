@@ -27,7 +27,7 @@
             <label>Telefone</label>
             <input type="text" size="20" name="tel" value="<?php echo $cliente->Telefone ?>">
             <label>CPF</label>
-            <input type="text" size="20" name="cpf" value="<?php echo $cliente->CPF ?>">
+            <input type="text" size="20" name="cpf" value="<?php echo $cliente->CPF ?>" readonly>
             <label>Data de Nascimento</label>
             <input type="text" size="20" name="dt_nasc" value="<?php echo formatarData(strtotime($cliente->DtNascimento)) ?>">
             <label>Email</label>

@@ -1,5 +1,5 @@
 <?php
-     require_once('../DAO/ClienteDao.php');
+     require_once('../Model/DAO/ClienteDao.php');
      require_once('../Model/Cliente.php');
 
      $opcao = $_REQUEST['opcao'];

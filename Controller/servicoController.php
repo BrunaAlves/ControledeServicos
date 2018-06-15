@@ -1,6 +1,6 @@
 <?php
-	require_once('..\DAO\conexao.inc');
-	require_once('..\DAO\servicoDAO.php');
+	require_once('..\Model\DAO\conexao.inc');
+	require_once('..\Model\DAO\servicoDAO.php');
 
 	require_once('..\Model\Servico.php');
 
@@ -74,7 +74,7 @@
 		$_SESSION['servicos'] = $lista;
 		$_SESSION['datas'] = $lista2;
 
-		header("Location:../BuscaServico.php");
+		header("Location:../View/Servico/BuscaServico.php");
 
 	}
 ?>

@@ -1,6 +1,6 @@
 <?php
-	require_once('..\DAO\conexao.inc');
-	require_once('..\DAO\ClienteDAO.php');
+	require_once('..\Model\DAO\conexao.inc');
+	require_once('..\Model\DAO\ClienteDAO.php');
 	require_once('..\Model\Cliente.php');
 
 	$email = $_REQUEST['email'];
