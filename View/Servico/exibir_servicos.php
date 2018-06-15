@@ -1,3 +1,11 @@
+<?php
+      require_once('../../Model/DAO/autentificar.inc');
+            
+      if(isset($_SESSION['usuario']))
+      {
+      $user = $_SESSION['usuario'];
+            if ($user->Tipo_user == 0) {
+?>
 
 <HTML>
 <HEAD>
@@ -8,9 +16,6 @@
         <h1>Serviços cadastrados</h1>
       <p>
 <?php
-
-      session_start();
-      
       $servicos = $_SESSION['servicos'];
 ?>
     <font face="Tahoma">
@@ -44,3 +49,12 @@
              </font>
            </BODY>
 </HTML>
+<?php
+      }
+      else
+      {
+      $erro = "Você não tem permissão de acesso para essa página!";
+      header("Location:../Erro/erro.php?erro=".$erro);
+      }
+      }        
+?>

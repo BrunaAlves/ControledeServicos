@@ -4,7 +4,6 @@
 </HEAD>
 <BODY>
 	<?php
-           header("Content-Type: text/html;  charset=ISO-8859-1",true);
            function formatarData($data)
            {
                     return date('d/m/Y',$data);

@@ -1,10 +1,18 @@
+<?php
+      require_once('../../Model/DAO/autentificar.inc');
+            
+      if(isset($_SESSION['usuario']))
+      {
+      $user = $_SESSION['usuario'];
+            if ($user->Tipo_user == 0) {
+?>
+
 <HTML>
 <HEAD>
  <TITLE>Cadastro de Serviço</TITLE>
 </HEAD>
 <BODY>
 <?php
-	session_start();
 
 	$servico = $_SESSION['servico'];
 
@@ -52,3 +60,12 @@
 </form>
 </BODY>
 </HTML>
+<?php
+      }
+      else
+      {
+      $erro = "Você não tem permissão de acesso para essa página!";
+      header("Location:../Erro/erro.php?erro=".$erro);
+      }
+      }        
+?>

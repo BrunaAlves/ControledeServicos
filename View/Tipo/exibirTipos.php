@@ -1,3 +1,12 @@
+<?php
+      require_once('../../Model/DAO/autentificar.inc');
+            
+      if(isset($_SESSION['usuario']))
+      {
+      $user = $_SESSION['usuario'];
+            if ($user->Tipo_user == 0) {
+?>
+
 <HTML>
 <HEAD>
  <TITLE>Tipos de Serviço</TITLE>
@@ -7,7 +16,6 @@
 <h2>Tipos de Serviço<h2>
 
 <?php
-    session_start();
     $tipos = $_SESSION['tipos'];
 ?>
 <table border = "1" width="80%">
@@ -32,3 +40,12 @@
 </center>
 </BODY>
 </HTML>
+<?php
+      }
+      else
+      {
+      $erro = "Você não tem permissão de acesso para essa página!";
+      header("Location:../Erro/erro.php?erro=".$erro);
+      }
+      }        
+?>

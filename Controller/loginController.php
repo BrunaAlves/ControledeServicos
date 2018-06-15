@@ -9,11 +9,10 @@
 	$user = new Cliente();
 	$clienteDao = new ClienteDAO();
 	$user = $clienteDao->efetuarLogin($email, $senha);
-	var_dump($user);
 	
 	if($user==false)
 	{	
-		$erro = true;
+		$erro = "Login ou senha incorretos, tente novamente!";
 		header("Location:../login.php?erro=".$erro);
 	}
 	else

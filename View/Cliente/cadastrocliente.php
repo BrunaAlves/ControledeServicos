@@ -1,3 +1,6 @@
+<?php
+    require_once('../../Model/DAO/autentificar.inc');
+?>
 <HTML>
 <HEAD>
 <TITLE>Cadastro de Clientes</TITLE>

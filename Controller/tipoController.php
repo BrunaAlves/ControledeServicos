@@ -30,6 +30,7 @@
                         }
                         break;
 
+                    //CAPTURA O TIPO DE SERVIÇO SEGUNDO O ID INFORMADO
                     case 3:
                         $id = $_REQUEST['id'];
                         $tipoDao = new tipoDao();
@@ -40,6 +41,7 @@
                         header('Location:../View/Tipo/atualizarTipo.php');
                         break;
                         
+                    //DELETA O TIPO DE SERVIÇO
                    case 4:
                         $id = (int)$_REQUEST['id'];
                         $tipoDao = new tipoDao();
@@ -47,6 +49,7 @@
                         header("Location:tipoController.php?opcao=2");
                         break;
                         
+                    //ALTERA O TIPO DE SERVIÇO
                    case 5:
                         $tipo = new Tipo();
                         $tipo->setTipo($_REQUEST['nome'], $_REQUEST['valor']);

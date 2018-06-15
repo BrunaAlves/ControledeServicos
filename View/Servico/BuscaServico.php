@@ -1,6 +1,3 @@
-<?php
-     require_once('..\..\Model\Servico.php');
-?>
 <HTML>
 <HEAD>
  <TITLE>Serviços</TITLE>

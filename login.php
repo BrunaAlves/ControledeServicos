@@ -8,10 +8,13 @@
             Login
         </div>
         <?php
-            $erro=false;
-            if(isset($_REQUEST['erro'])==true){
-                echo "<div style='color: red;'>Login ou senha incorretos, tente novamente!</div>";
-            }else
+            
+            if(isset($_REQUEST['erro']))
+            {
+            $erro = $_REQUEST['erro'];
+            echo "<font face='Arial' color='red'><strong>".$erro."</strong></font>";
+            }
+            else
             {
                 echo "";
             }
