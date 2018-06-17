@@ -9,6 +9,11 @@
       <center>
         <h1>Visualização de serviços</h1>
       <p>
+        <div>
+    <a href="..\..\Controller\carrinhoController.php?opcao=3">
+      Visualizar carrinho
+    </a>
+  </div>
 <?php
       session_start();
       
@@ -26,6 +31,7 @@
       <th>TIPO</th>
       <th>VALOR</th>
       <th>DATAS DISPONIVEIS</th>
+      <th></th>
     </tr>
 
 
@@ -39,24 +45,29 @@
                 <td><?=$servico->tipo; ?></td>
                 <td><?=$servico->valor; ?></td>
                 <td>
-                <select>
-                <?php
-                
-                  foreach($datas as $data)
-                {
-                if ($servico->id == $data->id) {
-                  echo "<option value=$data->id>";
-                  echo formatarData(strtotime($data->data));
-                echo "</option>";
-                }
-                }
-                ?>
-                </select>
+                  <select>
+                  <?php
+                  
+                    foreach($datas as $data)
+                  {
+                  if ($servico->id == $data->id) {
+                    echo "<option value=$data->id>";
+                    echo formatarData(strtotime($data->data));
+                  echo "</option>";
+                  }
+                  }
+                  ?>
+                  </select>
                 </td>
+                <td>
+                  <a href="..\..\Controller\carrinhoController.php?opcao=1&id=<?php echo $servico->id;?>">
+                    Carrinho
+                  </a>
+                </td>
+                  <?php
+                  }
+                  ?>
               </tr>
-          <?php
-          }
-          ?>
                </table>
             </BODY>
 </HTML>
