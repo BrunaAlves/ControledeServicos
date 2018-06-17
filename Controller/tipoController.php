@@ -59,6 +59,14 @@
                         header("Location:tipoController.php?opcao=2");
                         break;
 
-                   
+                   case 6:
+                        {
+                        $tipoDao = new tipoDao();
+                        $lista = $tipoDao->getTipos();
+                        session_start();
+                        $_SESSION['tipos'] = $lista;
+                        header("Location:../View/Tipo/escolherTipo.php");
+                        }
+                        break;
 }
 ?>

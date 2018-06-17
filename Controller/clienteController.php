@@ -42,12 +42,19 @@
                         break;
                         
                    case 5:
+                        session_start();
+                        $user = $_SESSION['usuario'];
                         $cliente = new Cliente();
                         $cliente->setCliente($_REQUEST['nome'], $_REQUEST['tipo'], $_REQUEST['end'], $_REQUEST['tel'], $_REQUEST['cpf'], $_REQUEST['dt_nasc'], $_REQUEST['email'], $_REQUEST['senha']);
                         $cliente->setCliente_id($_REQUEST['id']);
                         $clienteDao = new ClienteDao();
                         $clienteDao->atualizaCliente($cliente);
+                        if ($user->Tipo_user==0) {
                         header("Location:clienteController.php?opcao=6&pagina=1");
+                        }
+                        elseif ($user->Tipo_user==1){
+                        header("Location:../index.php");
+                        }
                         break;
 
                    case 6:
