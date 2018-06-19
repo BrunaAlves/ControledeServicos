@@ -1,6 +1,7 @@
 <?php
 	require_once('..\Model\DAO\conexao.inc');
 	require_once('..\Model\DAO\servicoDAO.php');
+	require_once('..\Model\DAO\dataDisponivelDAO.php');
 
 	require_once('..\Model\Servico.php');
 
@@ -38,8 +39,9 @@
 
 		$servico = $servicoDao->getServico($id);
 
-		session_start();
+		 session_start();
 		$_SESSION['servico'] = $servico;
+
 
 		header("Location:../View/Servico/alterar_servico.php");
 
@@ -52,6 +54,36 @@
 
 		$servicoDAO->atualizarServico($servico);
 
+		$idDD[] = ($_POST["id_disponibilidade"]);
+		$DD[] = ($_POST["data"]);
+
+		/*
+		foreach ($idDD as $key => $value) {
+			print_r($value);
+		}
+
+		foreach ($DD as $key => $value) {
+			print_r($value);
+		}
+		*/
+		
+        foreach ($DD as $key => $value) {
+        	foreach ($idDD as $keyy => $val) {
+        		
+	       		$datadisp = new DataDisponivel();
+	       		$datadisp->setData($value);
+	       		$datadisp->setId_disponibilidade($val);
+	        	$datadisp->setId_servico($_POST['id_servico']);
+
+	        //	print_r($datadisp);
+	        	$dataDisponivelDAO = new dataDisponivelDAO();
+				$dataDisponivelDAO->atualizarDataDisponivel($datadisp);
+				
+        		# code...
+        	}
+        }
+        
+        
 		header("Location:servicoController.php?opcao=2");
 	}
 	if($opcao==5){

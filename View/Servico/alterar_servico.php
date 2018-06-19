@@ -10,12 +10,16 @@
 <HTML>
 <HEAD>
  <TITLE>Cadastro de Serviço</TITLE>
+ 
 </HEAD>
 <BODY>
 <?php
 
 	$servico = $_SESSION['servico'];
 
+	//foreach ($servico as $s) {
+	//	print_r($s);
+	//}
 ?>
 	<h1>Alterar Serviço</h1>
 <form action="..\..\Controller\servicoController.php?opcao=4" method="POST">
@@ -51,6 +55,16 @@
 			    		<input type="text" name="id_tipo" value="<?php echo $servico->id_tipo ?>">
 			  		</div>
 			</div>
+			<div>
+                <label>Datas disponíveis:</label>
+                <?php foreach ($servico->datas as $key => $value) { ?>
+                	<div>
+                		Id: <input type="text" name="id_disponibilidade[<?php echo $value->id_disponibilidade ?>]" value="<?php echo $value->id_disponibilidade ?>" readonly>
+			    		Data: <input type="date" name="data[<?php echo $key ?>]" value="<?php echo $value->data ?>">
+			  		</div>
+                <?php }?>
+                	
+                    
 			<input type="hidden" name="opcao" value="4">
 		    <div>
 		        <button type="submit" class="btn btn-primary" value="Atualizar">Atualizar</button>

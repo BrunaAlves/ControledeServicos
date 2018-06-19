@@ -44,12 +44,26 @@
 		}
 
 		public function getServico($id){
-			$sql = $this->con->prepare("SELECT * FROM servicos where id_servico = :id");
+			
+
+			$sql = $this->con->prepare("SELECT * FROM servicos S WHERE s.id_servico = :id");
 			$sql->bindValue(':id', $id);
 			$sql->execute();
+			$servico = $sql->fetch(PDO::FETCH_OBJ);
 
-			return $sql->fetch(PDO::FETCH_OBJ); // retorna o registro da tabela no formato do objeto Servico capturado
 
+			$sql = $this->con->prepare("SELECT * FROM datasdisponiveis D where d.id_servico=:id"); 
+			$sql->bindValue(':id', $id);
+			$sql->execute();
+			
+			$servico->datas = array(); 
+			
+			while($servicos = $sql->fetch(PDO::FETCH_OBJ)){
+				$servico->datas[] = $servicos;
+			}
+			return $servico;
+
+			
 		}
 
 		public function atualizarServico(Servico $servico){

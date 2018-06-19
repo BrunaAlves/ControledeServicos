@@ -20,7 +20,7 @@
 		}
 
 		public function setId_servico($pIdServ){
-			return $this->id_servico = $pId;
+			return $this->id_servico = $pIdServ;
 		}
 
 		public function getData(){
