@@ -13,8 +13,29 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="../../index.php">Home</a></li>
+                        <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>Clientes<span class='caret'></span></a>
+                            <ul class='dropdown-menu' role='menu'>
+                                <li><a href="../../View/Cliente/cadastrocliente.php">Cadastrar cliente</a></li>
+                                <li><a href="../../Controller/tipoController.php?opcao=2">Exibir clientes</a></li>
+                            </ul>
+                        </li>
+                        <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>Serviços<span class='caret'></span></a>
+                            <ul class='dropdown-menu' role='menu'>
+                                <li><a href="../../View/Servico/cadastrar_servico.php">Cadastrar serviços</a></li>
+                                <li><a href="../../Controller/servicoController.php?opcao=2">Exibir serviços</a></li>
+                            </ul>
+                        </li>
+                        <li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'><a href="#">Tipo<span class='caret'></span></a>
+                            <ul class='dropdown-menu' role='menu'>
+                                <li><a href="../../View/Tipo/cadastrarTipo.php">Cadastrar Tipo</a></li>
+                                <li><a href="../../Controller/tipoController.php?opcao=2">Exibir Tipo</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../Controller/tipoController.php?opcao=6">Contratação de Serviços</a>
+                        </li>
+                        <li><a href="../../Controller/carrinhoController.php?opcao=3">Meu carrinho</a>
+                        </li>
                         <li><a href="">Sobre</a></li>
-                        <li><a href="../../Controller/tipoController.php?opcao=6">Serviços</a></li>
                         <?php
                             session_start();
                             if(isset($_SESSION['usuario']))
