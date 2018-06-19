@@ -8,10 +8,14 @@
 ?>
 
 <HTML>
-<HEAD>
-<TITLE>Atualizar de Tipo</TITLE>
-</HEAD>
+<?php
+            require_once('../Shared/Header.php');
+?>
 <BODY>
+      <?php
+            require_once('../Shared/MenuHeader.php');
+            require_once('../Shared/Panel.php');
+      ?>
 	<?php
         $tipo = $_SESSION['tipo'];
 	?>

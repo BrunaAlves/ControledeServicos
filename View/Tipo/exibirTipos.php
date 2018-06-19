@@ -8,10 +8,14 @@
 ?>
 
 <HTML>
-<HEAD>
- <TITLE>Tipos de Serviço</TITLE>
-</HEAD>
+<?php
+            require_once('../Shared/Header.php');
+    ?>
 <BODY>
+  <?php
+                require_once('../Shared/MenuHeader.php');
+                require_once('../Shared/Panel.php');
+    ?>
 <center>
 <h2>Tipos de Serviço<h2>
 

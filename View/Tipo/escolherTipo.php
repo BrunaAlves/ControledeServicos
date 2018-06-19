@@ -2,6 +2,16 @@
     session_start();
     $tipos = $_SESSION['tipos'];
     ?>
+    <HTML>
+<?php
+            require_once('../Shared/Header.php');
+    ?>
+<BODY>
+  <?php
+                require_once('../Shared/MenuHeader.php');
+                require_once('../Shared/Panel.php');
+    ?>
+<center>
     <h2>Busca de Serviços</h2>
       
       <form action="../../Controller/servicoController.php" method="post">

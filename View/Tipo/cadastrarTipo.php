@@ -8,11 +8,14 @@
 ?>
 
 <html>
-    <head>
-        <title>Cadastro de Tipos de Serviço</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
+    <?php
+            require_once('../Shared/Header.php');
+    ?>
     <body>
+    <?php
+                require_once('../Shared/MenuHeader.php');
+                require_once('../Shared/Panel.php');
+    ?>
         <center>
         <h2>Cadastrar Tipos de Serviço</h2>
         <form action="../../Controller/tipoController.php" method="post">

@@ -8,12 +8,13 @@
 ?>
 
 <HTML>
-<HEAD>
- <TITLE>Cadastro de Serviço</TITLE>
- 
-</HEAD>
+	<?php
+            require_once('../Shared/Header.php');
+    ?>
 <BODY>
 <?php
+	require_once('../Shared/MenuHeader.php');
+    require_once('../Shared/Panel.php');
 
 	$servico = $_SESSION['servico'];
 

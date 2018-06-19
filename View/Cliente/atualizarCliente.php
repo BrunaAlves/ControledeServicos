@@ -1,9 +1,12 @@
 <HTML>
-<HEAD>
-<TITLE>Atualizar de Clientes</TITLE>
-</HEAD>
+<?php
+require_once('../Shared/Header.php');
+?>
 <BODY>
 	<?php
+    require_once('../Shared/MenuHeader.php');
+    require_once('../Shared/Panel.php');
+
            function formatarData($data)
            {
                     return date('d/m/Y',$data);

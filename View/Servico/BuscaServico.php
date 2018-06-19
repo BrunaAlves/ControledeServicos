@@ -1,8 +1,12 @@
 <HTML>
-<HEAD>
- <TITLE>Serviços</TITLE>
- </HEAD>
+<?php
+            require_once('../Shared/Header.php');
+    ?>
 <BODY>
+   <?php
+                require_once('../Shared/MenuHeader.php');
+                require_once('../Shared/Panel.php');
+    ?>
       <center>
         <h1>Visualização de serviços</h1>
       <p>

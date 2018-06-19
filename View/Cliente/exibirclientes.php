@@ -8,15 +8,19 @@
 ?>
 
 <HTML>
-<HEAD>
- <TITLE>Lista de Clientes</TITLE>
-</HEAD>
+<?php
+            require_once('../Shared/Header.php');
+   ?>
 <BODY>
+    <?php
+            require_once('../Shared/MenuHeader.php');
+            require_once('../Shared/Panel.php');
+      ?>
 <center>
 <h2>Lista de clientes<h2>
 
 <?php
-    header("Content-Type: text/html;  charset=ISO-8859-1",true);
+   // header("Content-Type: text/html;  charset=ISO-8859-1",true);
     $clientes = $_SESSION['clientes'];
     $numpaginas = $_REQUEST['paginas'];
     function formatarData($data)

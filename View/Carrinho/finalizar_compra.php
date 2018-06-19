@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<?php
+require_once('../Shared/Header.php');
+?>
 <head>
 	<title>Finalizar Compra</title>
 	<style type="text/css">
@@ -30,6 +33,8 @@
 
 <body>
 	<?php
+		require_once('../Shared/MenuHeader.php');
+		require_once('../Shared/Panel.php');
 
 		$total = (double)$_REQUEST['total'];
 	?>

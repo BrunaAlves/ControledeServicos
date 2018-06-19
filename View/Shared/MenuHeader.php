@@ -37,7 +37,7 @@
                         </li>
                         <li><a href="">Sobre</a></li>
                         <?php
-                            session_start();
+                           // session_start();
                             if(isset($_SESSION['usuario']))
                             {
                             $user = $_SESSION['usuario'];
