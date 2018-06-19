@@ -23,7 +23,7 @@
 				echo '<div style="background-color: tomato; width:100%;">';
 
 				echo '<p style="text-align: center;">Nenhum item foi incluído no carrinho de compras</p>';
-				echo '<p style="text-align: center;"><a href="controlerPublicacao.php?opcao=2">Visualizar Publicações</p>';
+				echo '<p style="text-align: center;"><a href="..\Servico\BuscaServico.php">Visualizar Serviços</p>';
 
 				echo '</div>';
 
@@ -73,6 +73,6 @@
 	</table>
 	<br>
 	<a href="..\Servico\BuscaServico.php">Continuar comprando</a>
-	<a href="finalizarCompra.php?total=<?php echo $soma;?>">Finalizar compra</a>
+	<a href="finalizar_compra.php?total=<?php echo $soma;?>">Finalizar compra</a>
 </body>
 </html>
