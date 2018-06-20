@@ -1,48 +1,57 @@
 <?php
-      require_once('../../Model/DAO/autentificar.inc');
-            
-      if(isset($_SESSION['usuario']))
-      {
+require_once('../../Model/DAO/autentificar.inc');
+
+if(isset($_SESSION['usuario']))
+{
       $user = $_SESSION['usuario'];
-            if ($user->Tipo_user == 0) {
-?>
+      if ($user->Tipo_user == 0) {
+            ?>
 
-<HTML>
-<?php
+            <HTML>
+            <?php
             require_once('../Shared/Header.php');
-?>
-<BODY>
-      <?php
-            require_once('../Shared/MenuHeader.php');
-            require_once('../Shared/Panel.php');
-      ?>
-	<?php
-        $tipo = $_SESSION['tipo'];
-	?>
+            ?>
+            <BODY>
+                  <?php
+                  require_once('../Shared/MenuHeader.php');
+                  require_once('../Shared/Panel.php');
+                  ?>
+                  <?php
+                  $tipo = $_SESSION['tipo'];
+                  ?>
 
-      <center>
-      <h2>Atualizar Tipo</h2>
-      <form action="../../Controller/tipoController.php" method="post">
-            <input type="hidden" name="opcao" value="5">
-            <label>ID</label>
-            <input type="text" size="20" name="id" value="<?php echo $tipo->id_tipo ?>" readonly>
-            <label>Tipo de Serviço</label>
-            <input type="text" size="20" name="nome" value="<?php echo $tipo->nome ?>">
-            <label>Valor</label>
-            <input type="text" size="20" name="valor" value="<?php echo $tipo->valor ?>">
-            <input type="submit" value="Atualizar">
-            <input type="reset" value="Cancelar">
-      </form>
-      </center>
-</BODY>
+                  <center>
+                        <center><h3 class="panel-title">Atualizar Tipo</h3></center>
+                  </div>
+                  <div class="panel-body">
+                        <form action="../../Controller/tipoController.php" method="post">
+                              <input type="hidden" name="opcao" value="5">
+                              <div>
+                                    <label>ID</label>
+                                    <input class="form-control" type="text" size="20" name="id" value="<?php echo $tipo->id_tipo ?>" readonly>
+                              </div>
+                              <div>
+                                    <label>Tipo de Serviço</label>
+                                    <input class="form-control" type="text" size="20" name="nome" value="<?php echo $tipo->nome ?>">
+                              </div>
+                              <div>
+                                    <label>Valor</label>
+                                    <input class="form-control" type="text" size="20" name="valor" value="<?php echo $tipo->valor ?>">
+                              </div>
+                              <input type="submit" value="Atualizar">
+                              <input type="reset" value="Cancelar">
+                        </form>
+                  </div>
+            </center>
+      </BODY>
 </HTML>
 <?php
-      }
-      else
-      {
+}
+else
+{
       $erro = "Você não tem permissão de acesso para essa página!";
       header("Location:../Erro/erro.php?erro=".$erro);
-      }
-      }        
+}
+}        
 ?>
 

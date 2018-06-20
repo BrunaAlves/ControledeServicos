@@ -101,31 +101,31 @@ if (isset($_SESSION['usuario'])) {
                     <form action="..\..\Controller\servicoController.php" method="POST" style="margin: 0% 0;">
                         <div>
                             <div>
-                                <div class="col-md-3">
+                                <div>
                                     <label>Nome do serviço:</label>
                                     <div>
                                         <input class="form-control" type="text" name="nome">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div>
                                     <label>Valor:</label>
                                     <div>
                                         <input class="form-control" type="text" name="valor">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div>
                                     <label>Descrição:</label>
                                     <div>
                                         <input class="form-control" type="text" name="descricao">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div>
                                     <label>Tipo:</label>
                                     <div>
                                         <input class="form-control" type="text" name="tipo">
                                     </div>
                                 </div>
-                                <div class="col-md-3">
+                                <div>
                                     <label>Adicionar datas disponíveis:</label>
                                     <input type="button" value="+" onclick="AddCampos()">
                                     <script type="text/javascript">

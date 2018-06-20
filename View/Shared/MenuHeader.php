@@ -33,7 +33,7 @@
                         </li>
                         <li><a href="../../Controller/tipoController.php?opcao=6">Contratação de Serviços</a>
                         </li>
-                        <li><a href="../../Controller/carrinhoController.php?opcao=3">Meu carrinho</a>
+                        <li><a href="../../Controller/carrinhoController.php?opcao=2">Meu carrinho</a>
                         </li>
                         <li><a href="">Sobre</a></li>
                         <?php

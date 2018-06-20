@@ -22,47 +22,49 @@
 	//	print_r($s);
 	//}
 ?>
-	<h1>Alterar Serviço</h1>
+	<center><h3 class="panel-title">Alterar Serviço</h3></center>
+	</div>
+	<div class="panel-body">
 <form action="..\..\Controller\servicoController.php?opcao=4" method="POST">
 	<div>
     	<div>
     		<div>
 			    <label>ID:</label>
 			        <div>
-			    		<input type="text" name="id_servico" value="<?php echo $servico->id_servico ?>" readonly>
+			    		<input class="form-control" type="text" name="id_servico" value="<?php echo $servico->id_servico ?>" readonly>
 			  		</div>
 			</div>
 			<div>
 			    <label>Nome do serviço:</label>
 			        <div>
-			    		<input type="text" name="nome" value="<?php echo $servico->nome ?>">
+			    		<input class="form-control" type="text" name="nome" value="<?php echo $servico->nome ?>">
 			  		</div>
 			</div>
 			<div>
 			    <label>Valor:</label>
 			        <div>
-			    		<input type="text" name="valor" value="<?php echo $servico->valor ?>">
+			    		<input class="form-control" type="text" name="valor" value="<?php echo $servico->valor ?>">
 			  		</div>
 			</div>
 			<div>
 			    <label>Descrição:</label>
 			        <div>
-			    		<input type="text" name="descricao" value="<?php echo $servico->descricao ?>">
+			    		<input class="form-control" type="text" name="descricao" value="<?php echo $servico->descricao ?>">
 			  		</div>
 			</div>
 			<div>
 			    <label>Tipo:</label>
 			        <div>
-			    		<input type="text" name="id_tipo" value="<?php echo $servico->id_tipo ?>">
+			    		<input class="form-control" type="text" name="id_tipo" value="<?php echo $servico->id_tipo ?>">
 			  		</div>
 			</div>
 			<div>
                 <label>Datas disponíveis:</label>
                 <?php foreach ($servico->datas as $key => $value) { ?>
                 	<div>
-                		Id: <input type="text" name="id_disponibilidade[<?php echo $value->id_disponibilidade ?>]" value="<?php echo $value->id_disponibilidade ?>" readonly>
+                		<label>Id: <input type="text" name="id_disponibilidade[<?php echo $value->id_disponibilidade ?>]" value="<?php echo $value->id_disponibilidade ?>" readonly>
 			    		Data: <input type="date" name="data[<?php echo $key ?>]" value="<?php echo $value->data ?>">
-			  		</div>
+			  		</div></label>
                 <?php }?>
                 	
                     
@@ -73,6 +75,8 @@
 		</div>
 	</div>
 </form>
+    </div>
+</center>
 </BODY>
 </HTML>
 <?php

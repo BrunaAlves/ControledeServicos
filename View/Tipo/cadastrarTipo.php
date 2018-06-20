@@ -17,13 +17,19 @@
                 require_once('../Shared/Panel.php');
     ?>
         <center>
-        <h2>Cadastrar Tipos de Serviço</h2>
+        <center><h3 class="panel-title">Cadastrar Tipos de Serviço</h3></center>
+        </div>
+        <div class="panel-body">
         <form action="../../Controller/tipoController.php" method="post">
             <input type="hidden" name="opcao" value="1">
+            <div>
             <label>Nome</label>
-            <input type="text" size="20" name="nome">
+            <input class="form-control" type="text" size="20" name="nome">
+          </div>
+          <div>
             <label>Valor</label>
-            <input type="text" size="20" name="valor">
+            <input class="form-control" type="text" size="20" name="valor">
+          </div>
             <input type="submit" value="Cadastrar">
         </form>
         </center>
