@@ -1,9 +1,8 @@
 <html>
     <?php
-        session_start();
-        $carrinho = $_SESSION['carrinho'];
-        require_once('../Shared/Header.php');
-
+    session_start();
+    $carrinho = $_SESSION['carrinho'];
+    require_once('../Shared/Header.php');
     ?>
     <body>
         <?php
@@ -47,11 +46,9 @@
             </thead>
             <tr align="left">
 
-    <?php
-
-
-    foreach ($carrinho as $item) {
-        ?>
+                <?php
+                foreach ($carrinho as $item) {
+                    ?>
 
                     <td><?php echo $cont; ?></td>
                     <td><?php echo $item->id_servico; ?></td>
