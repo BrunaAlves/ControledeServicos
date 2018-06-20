@@ -7,7 +7,7 @@
     require_once('..\Model\DataDisponivel.php');
 
     $opcao = (int) $_REQUEST['opcao'];
-    $idserv = (int) $_REQUEST['idserv'];
+    $idserv = (int) $_REQUEST['id_servico'];
     
     if ($opcao == 1) {
         $id = (int) $_REQUEST['id'];
@@ -32,5 +32,16 @@
 
         header("Location:../View/Servico/alterar_servico.php");
     }
+     if ($opcao == 3) {
 
+        $datadisp = $_GET["data"];
+
+        $dataDisponivelDao = new dataDisponivelDao();
+
+        $dataDisponivelDao->incluirDatasDisponiveis($idserv, $datadisp);
+
+         header("Location:ServicoController.php?opcao=3&id=".$idserv);
+
+         
+    }
 ?>
