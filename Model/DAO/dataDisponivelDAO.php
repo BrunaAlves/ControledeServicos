@@ -28,6 +28,16 @@ class dataDisponivelDAO {
 
             $sql->execute();
         }
+
+    }
+    
+    public function excluirDataDisponivel($id) {
+
+        $sql = $this->con->prepare("delete from datasdisponiveis where id_disponibilidade= :id");
+
+        $sql->bindValue(':id', $id);
+        $sql->execute();
+
     }
 
 }

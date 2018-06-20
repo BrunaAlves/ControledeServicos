@@ -63,7 +63,8 @@ if (isset($_SESSION['usuario'])) {
                                 <div>
                                     <label>Id: <input type="text" name="id_disponibilidade[<?php echo $value->id_disponibilidade ?>]" value="<?php echo $value->id_disponibilidade ?>" readonly>
                                         Data: <input type="date" name="data[<?php echo $key ?>]" value="<?php echo $value->data ?>">
-                                        </div></label>
+                                        <a href='..\..\Controller\datadisponivelController.php?opcao=1&id=<?php echo $value->id_disponibilidade?>&idserv=<?php echo $servico->id_servico ?>' ><input type="button" class="btn btn-danger" value="Excluir"/>
+                                        </div></a></label>
                                 <?php } ?>
 
 
