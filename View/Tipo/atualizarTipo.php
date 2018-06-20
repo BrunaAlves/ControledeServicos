@@ -38,8 +38,9 @@ if(isset($_SESSION['usuario']))
                                     <label>Valor</label>
                                     <input class="form-control" type="text" size="20" name="valor" value="<?php echo $tipo->valor ?>">
                               </div>
-                              <input type="submit" value="Atualizar">
-                              <input type="reset" value="Cancelar">
+                              <br>
+                              <input class="btn btn-primary" type="submit" value="Atualizar">
+                              <input class="btn btn-danger" type="reset" value="Cancelar">
                         </form>
                   </div>
             </center>

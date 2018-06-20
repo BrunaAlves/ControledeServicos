@@ -4,6 +4,7 @@
     ?>
     <BODY>
         <?php
+        session_start();
         require_once('../Shared/MenuHeader.php');
         require_once('../Shared/Panel.php');
         ?>
@@ -46,6 +47,7 @@
                 <input class="form-control" type="text" size="20" name="senha">
             </div>
         </div>
+        <br>
         <div class="col-sm-offset-2 col-sm-10">
             <button type="submit" class="btn btn-primary btn-lg pull-right"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>Cadastrar</button>
         </div>

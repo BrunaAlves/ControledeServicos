@@ -54,8 +54,9 @@
             <label>Senha</label>
             <input class="form-control" type="text" size="20" name="senha" value="<?php echo $cliente->Senha ?>">
         </div>
-        <input type="submit" value="Atualizar">
-        <input type="reset" value="Cancelar">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Atualizar">
+        <input class="btn btn-danger" type="reset" value="Cancelar">
     </form>
 </div>
 </center>

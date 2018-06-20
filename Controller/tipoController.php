@@ -62,7 +62,7 @@ switch ($opcao) {
             $lista = $tipoDao->getTipos();
             session_start();
             $_SESSION['tipos'] = $lista;
-            header("Location:../View/Tipo/escolherTipo.php");
+            header("Location:servicoController.php?opcao=6");
         }
         break;
 }

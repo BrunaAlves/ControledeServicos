@@ -16,7 +16,7 @@ switch ($opcao) {
 
             if ($user == false) {
                 $erro = "Login ou senha incorretos, tente novamente!";
-                header("Location:../login.php?erro=" . $erro);
+                header("Location:../View/login.php?erro=" . $erro);
             } else {
                 if ($user->Tipo_user == 0) {
                     session_start();
@@ -36,7 +36,7 @@ switch ($opcao) {
     case 2: {
             session_start();
             session_destroy();
-            header("Location:../login.php");
+            header("Location:../View/login.php");
         }
         break;
 }

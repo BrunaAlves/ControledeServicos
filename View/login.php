@@ -19,7 +19,7 @@
             <div class="col-md-4 col-md-offset-4 text-center logo-margin ">
             </div>
             <div class="col-md-4 col-md-offset-4">
-              <img src=".../../img/logo.png" alt="" width="350" height="150" class="img-responsive" />
+              <img src="../img/logo.png" alt="" width="350" height="150" class="img-responsive" />
           </div>
         </div>
         <div class="row">
@@ -43,7 +43,7 @@
         ?>
                     </div>
                     <div class="panel-body">
-                        <form role="form" action="Controller\loginController.php?opcao=1" method="post">
+                        <form role="form" action="../Controller/loginController.php?opcao=1" method="post">
                             <fieldset>
                                 <div class="form-group">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <a class="wow fadeInUp" href="View/Cliente/cadastrocliente.php"><font face='Arial' color='black'><strong>Sem cadastro?</strong></font></a>
+                                        <a class="wow fadeInUp" href="Cliente/cadastrocliente.php"><font face='Arial' color='black'><strong>Sem cadastro?</strong></font></a>
                                     </label>
                                 </div>
                                 <input class="btn btn-lg btn-primary btn-block" type="submit" value="Login"/>

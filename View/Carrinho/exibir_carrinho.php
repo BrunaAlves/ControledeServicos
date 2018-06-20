@@ -9,7 +9,6 @@
         require_once('../Shared/MenuHeader.php');
         require_once('../Shared/Panel.php');
         ?>
-    <center>
         <center><h3 class="panel-title">Meu Carrinho de Compras</h3></center>
     </div>
 
@@ -26,7 +25,7 @@
         echo '<div style="background-color: tomato; width:100%;">';
 
         echo '<p style="text-align: center;">Nenhum item foi incluído no carrinho de compras</p>';
-        echo '<p style="text-align: center;"><a href="..\Servico\BuscaServico.php">Visualizar Serviços</p>';
+        echo '<h4 style="text-align: center;"><b><a href="../../Controller/tipoController.php?opcao=6">Visualizar Serviços</b></h4>';
 
         echo '</div>';
 
@@ -55,7 +54,7 @@
                     <td><?php echo $item->nome; ?></td>
                     <td><?php echo $item->id_tipo; ?></td>
                     <td><?php echo 'R$ ' . $item->valor; ?></td>
-                    <td><a href="..\..\Controller\carrinhoController.php?opcao=2&index=<?php echo $cont - 1; ?>">Remover</a></td>
+                    <td><center><a href="..\..\Controller\carrinhoController.php?opcao=2&index=<?php echo $cont - 1; ?>"><input type='button' class='btn btn-danger' value='Remover Serviço'/></a></center></td>
                 </tr>
         <?php
         $soma += $item->valor;
@@ -70,7 +69,10 @@
         </tr>
     </table>
     <br>
-    <a href="..\Servico\BuscaServico.php">Continuar comprando</a>
-    <a href="finalizar_compra.php?total=<?php echo $soma; ?>">Finalizar compra</a>
+    <div class="col-sm-offset-8">
+            <a href="..\Servico\BuscaServico.php"><input type='button' class='btn btn-success' value='Continuar Comprando'/></a>
+            <a href="finalizar_compra.php?total=<?php echo $soma; ?>"><input type='button' class='btn btn-warning' value='Finalizar Compra'/></a>
+    </div>
+            <br>
 </body>
 </html>

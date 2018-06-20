@@ -8,6 +8,7 @@ require_once('../Shared/Header.php');
   
   $servicos = $_SESSION['servicos'];
   $datas = $_SESSION['datas'];
+  $tipos = $_SESSION['tipos'];
   function formatarData($data)
   {
     return date('d/m/Y',$data);
@@ -18,11 +19,28 @@ require_once('../Shared/Header.php');
   <center>
     <center><h3 class="panel-title">Visualização de serviços</h3></center>
   </div>
-  <div>
-    <a href="..\..\Controller\carrinhoController.php?opcao=3">
-      Visualizar carrinho
-    </a>
+
+  <form action="../../Controller/servicoController.php" method="post">
+        <input type="hidden" name="opcao" value="6">
+        <br>
+        <div class="row">
+          <div class="col-md-3">
+            <label>Escolha um tipo de serviço!</label>
+          </div>
+          <div class="col-md-5">
+            <select name="id" class="form-control">
+                <?php
+                foreach ($tipos as $tipo) {
+                  echo "<option value=".$tipo->id_tipo.">".$tipo->nome."</option>";
+              }
+              ?>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <input class="btn btn-info" type="submit" value="Buscar">
+    </div>
   </div>
+  </form>
   <table class="table table-striped table-bordered" align="center">
     <thead>
       <tr>
@@ -60,9 +78,15 @@ require_once('../Shared/Header.php');
               ?>
             </select>
           </td>
+          
           <td>
+          <?php
+            if (isset($_SESSION['carrinho'])) {
+              $carrinho = $_SESSION['carrinho'];
+            }
+          ?>
             <a href="..\..\Controller\carrinhoController.php?opcao=1&id=<?php echo $servico->id;?>">
-              Carrinho
+              <input type='button' class='btn btn-primary' value='Contratar'/>
             </a>
           </td>
           <?php

@@ -29,7 +29,10 @@ if (isset($_SESSION['usuario'])) {
                         <label>Valor</label>
                         <input class="form-control" type="text" size="20" name="valor">
                     </div>
-                    <input type="submit" value="Cadastrar">
+                    <br>
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary btn-lg pull-right"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>Salvar</button>
+                    </div>
                 </form>
         </center>
         </body>

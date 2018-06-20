@@ -125,9 +125,9 @@ if (isset($_SESSION['usuario'])) {
                                         <input class="form-control" type="text" name="tipo">
                                     </div>
                                 </div>
-                                <div>
+                                <div><br>
                                     <label>Adicionar datas disponíveis:</label>
-                                    <input type="button" value="+" onclick="AddCampos()">
+                                    <input class="btn btn-info" type="button" value="+" onclick="AddCampos()">
                                     <script type="text/javascript">
                                         //Escrevendo o código-fonte HTML e ocultando os campos criados:
                                         for (iLoop = 1; iLoop <= totalCampos; iLoop++) {

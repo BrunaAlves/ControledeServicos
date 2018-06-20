@@ -33,53 +33,82 @@ require_once('../Shared/Header.php');
 
 <body>
 	<?php
+		session_start();
 		require_once('../Shared/MenuHeader.php');
 		require_once('../Shared/Panel.php');
 
 		$total = (double)$_REQUEST['total'];
 	?>
-	<h2>Dados do comprador</h2>
-	<p>Informe os dados para finalizar a compra</p>
+	<center><h2>Dados do comprador</h2></center>
+</div>
+<div class="panel-body">
+	<center><h4>Informe os dados para finalizar a compra</h4></center>
 	<form action="boleto/meuBoleto.php" method="POST">
-
-		<div class="form">
-
-			<label for="nome"><b>Nome<b></label>
-			<input type="text" name="nome" maxlength="50" placeholder="Informe seu nome..." required="required">
-
-			<label for="cpf"><b>CPF<b></label>
-			<input type="text" name="cpf" maxlength="14" placeholder="Informe o CPF..." required="required">
-
-			<label for="end"><b>Endereço<b></label>
-			<input type="text" name="end" maxlength="50" required="required">
-
-			<label for="cidade"><b>Cidade<b></label>
-			<input type="text" name="cidade" maxlength="50" required="required">
-
-			<label for="uf"><b>Estado<b></label>
-			<select name="uf">
-				<option value="MG">MG</option>
-				<option value="RJ">RJ</option>
-				<option value="SP">SP</option>
+	<div class="row">
+		<div class="col-md-9">
+			<label for="nome">Nome</label>
+			<input class="form-control" type="text" name="nome" maxlength="50" placeholder="Informe seu nome..." required="required">
+		</div>
+		<div class="col-md-3">
+			<label for="cpf">CPF</label>
+			<input class="form-control" type="text" name="cpf" maxlength="14" placeholder="Informe o CPF..." required="required">
+		</div>
+	</div>
+			<label for="end">Endereço</label>
+			<input class="form-control" type="text" name="end" maxlength="50" placeholder="Informe o seu endereço..." required="required">
+			<label for="cidade">Cidade</label>
+			<input class="form-control" type="text" name="cidade" maxlength="50" placeholder="Informe o sua cidade..." required="required">
+	<div class="row">
+		<div class="col-md-6">
+			<label for="uf">Estado</label>
+			<select class="form-control" name="uf">
+				<option value="AC">Acre</option>
+				<option value="AL">Alagoas</option>
+				<option value="AP">Amapá</option>
+				<option value="AM">Amazonas</option>
+				<option value="BA">Bahia</option>
+				<option value="CE">Ceará</option>
+				<option value="DF">Distrito Federal</option>
+				<option value="ES">Espírito Santo</option>
+				<option value="GO">Goiás</option>
+				<option value="MA">Maranhão</option>
+				<option value="MT">Mato Grosso</option>
+				<option value="MS">Mato Grosso do Sul</option>
+				<option value="MG">Minas Gerais</option>
+				<option value="PA">Pará</option>
+				<option value="PB">Paraíba</option>
+				<option value="PR">Paraná</option>
+				<option value="PE">Pernambuco</option>
+				<option value="PI">Piauí</option>
+				<option value="RJ">Rio de Janeiro</option>
+				<option value="RN">Rio Grande do Norte</option>
+				<option value="RS">Rio Grande do Sul</option>
+				<option value="RO">Rondônia</option>
+				<option value="RR">Roraima</option>
+				<option value="SC">Santa Catarina</option>
+				<option value="SP">São Paulo</option>
+				<option value="SE">Sergipe</option>
+				<option value="TO">Tocantins</option>
 			</select>
-
-			<label for="cep"><b>CEP<b></label>
-			<input type="text" name="cep" maxlength="10">
-
+		</div>
+		<div class="col-md-6">
+			<label for="cep">CEP</label>
+			<input class="form-control" type="text" name="cep" maxlength="10" placeholder="Informe o seu CEP..." required="required">
+			</>
 			<input type="hidden" name="total" value="<?php echo $total; ?>" >
-
+		</div>
+	</div>
 			<div class="btn">
 
-				<button type="submit">Emitir Boleto</button>
-				<button type="reset">Cancelar</button>
+				<button class="btn btn-primary" type="submit">Emitir Boleto</button>
+				<button class="btn btn-danger" type="reset">Cancelar</button>
 
 			</div>
-		</div>
 		
 	</form>
-
+</div>
 	<?php 
-		echo 'Total da compra ' .$total;
+		echo "<h3 style='color:red;'>Total da compra: R$" .$total."</h3>";
 	?>
 
 </body>

@@ -1,6 +1,5 @@
 <?php
 require_once('../../Model/DAO/autentificar.inc');
-
 if (isset($_SESSION['usuario'])) {
     $user = $_SESSION['usuario'];
     if ($user->Tipo_user == 0) {
@@ -19,7 +18,6 @@ if (isset($_SESSION['usuario'])) {
                 <center><h3 class="panel-title">Lista de clientes</h3></center>
             </div>
             <?php
-            // header("Content-Type: text/html;  charset=ISO-8859-1",true);
             $clientes = $_SESSION['clientes'];
             $numpaginas = $_REQUEST['paginas'];
 
@@ -28,6 +26,19 @@ if (isset($_SESSION['usuario'])) {
             }
             ?>
             <table class="table table-striped table-bordered" align="center">
+                <div>
+                    <center>
+                    <ul class="pagination">
+                    <?php
+                    for ($i = 1; $i <= $numpaginas; $i++) {
+                        ?>
+                        <li><a href="../../Controller/clienteController.php?opcao=6&pagina=<?php echo $i ?>"><?php echo $i ?></a></li>
+                        <?php
+                    }
+                    ?>
+                    </ul>
+                    </center>
+                </div>
                 <thead>
                     <tr>
                         <th scope="col">COD</th>
@@ -52,17 +63,23 @@ if (isset($_SESSION['usuario'])) {
                         echo"<a href='../../Controller/clienteController.php?opcao=4&id=" . $cliente->CodCli . "'><input type='button' class='btn btn-danger' value='Excluir'/></a></td>";
                     }
                     ?>
-                <div>
+                
+                </tbody>
+            </table>
+        </center>
+        <div>
+                    <center>
+                    <ul class="pagination">
                     <?php
                     for ($i = 1; $i <= $numpaginas; $i++) {
                         ?>
-                        <a href="../../Controller/clienteController.php?opcao=6&pagina=<?php echo $i ?>"><?php echo $i ?></a>
+                        <li><a href="../../Controller/clienteController.php?opcao=6&pagina=<?php echo $i ?>"><?php echo $i ?></a></li>
                         <?php
                     }
                     ?>
+                    </ul>
+                    </center>
                 </div>
-                </tbody>
-        </center>
         </BODY>
         </HTML>
         <?php

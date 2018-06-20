@@ -16,7 +16,7 @@ $total  = $_REQUEST['total'];
 
 
 $sacado = new Agente($nome, $cpf, $end, $cep, $cidade, $uf);
-$cedente = new Agente('Livraria Web Book Tech LTDA', '02.123.123/0001-11', 'Rua Halfeld 403 Lj ', '34021-000', 'Juiz de Fora', 'MG');
+$cedente = new Agente('IServiços LTDA', '02.123.123/0001-11', 'Rua Halfeld 403 Lj ', '34021-000', 'Juiz de Fora', 'MG');
 
 $boleto = new BancoDoBrasil(array(
     // Parâmetros obrigatórios
