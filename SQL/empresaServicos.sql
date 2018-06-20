@@ -34,7 +34,7 @@ CREATE TABLE `clientes` (
   `Telefone` varchar(20) DEFAULT NULL,
   `CPF` varchar(13) DEFAULT NULL,
   `DtNascimento` datetime DEFAULT NULL,
-  `Email` varchar(20) DEFAULT NULL,
+  `Email` varchar(40) DEFAULT NULL,
   `Senha` varchar(8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -43,8 +43,8 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`Nome`, `Tipo_user`, `Endereco`, `Telefone`, `CPF`, `DtNascimento`, `Email`, `Senha`) VALUES
-('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
-('Orígenes Lessa',1, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', NULL, NULL),
+('ADMINISTRADOR',0, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', `admin@admin.com`, `admin`),
+('Orígenes Lessa',1, NULL, '1234-5676', NULL, '1903-07-12 00:00:00', `cliente@cliente.com`, `1234`),
 ('Rachel de Queiroz',1, NULL, '1234-5679', NULL, '1910-11-17 00:00:00', NULL, NULL),
 ('Dias Gomes',1, NULL, '1234-5671', NULL, '1922-10-19 00:00:00', NULL, NULL),
 ('Raul Pompéia',1, NULL, '1234-5672', NULL, '1863-04-12 00:00:00', NULL, NULL),

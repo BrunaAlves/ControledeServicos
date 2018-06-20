@@ -7,23 +7,23 @@ if (isset($_SESSION['usuario'])) {
         ?>
 
         <HTML>
-            <?php
-            require_once('../Shared/Header.php');
-                $servico = $_SESSION['servico'];
-            ?>
+        <?php
+        require_once('../Shared/Header.php');
+        $servico = $_SESSION['servico'];
+        ?>
         <HEAD>
-                <script type="text/javascript">
-                    var total = <?php echo $total = sizeof($servico->datas)?>;
-                    var totalCampos = 7;
+            <script type="text/javascript">
+                var total = <?php echo $total = sizeof($servico->datas)?>;
+                var totalCampos = 7;
         //Não altere os valores abaixo, pois são variáveis controle;
-                    var iLoop = 1;
-                    var iCount = 0;
-                    var linhaAtual;
+        var iLoop = 1;
+        var iCount = 0;
+        var linhaAtual;
 
 
-                    function AddCampos() {
-                        var hidden1 = document.getElementById("hidden1");
-                        var hidden2 = document.getElementById("hidden2");
+        function AddCampos() {
+            var hidden1 = document.getElementById("hidden1");
+            var hidden2 = document.getElementById("hidden2");
 
                         //Executar apenas se houver possibilidade de inserção de novos campos:
                         if (iCount < totalCampos) {
@@ -75,8 +75,8 @@ if (isset($_SESSION['usuario'])) {
                         }
 
         //  if(confirm("O campo que contém o valor:\n» "+campoValor+"\nserá excluído!\n\nDeseja prosseguir?")){
-                        document.getElementById("linha" + id).style.display = "none";
-                        iCount--;
+            document.getElementById("linha" + id).style.display = "none";
+            iCount--;
 
                         //Removendo o valor de hidden1:
                         if (hidden1.value.indexOf(",linha" + id) != -1) {
@@ -87,81 +87,81 @@ if (isset($_SESSION['usuario'])) {
                             hidden1.value = "";
                         }
         //    }
-                    }
-                </script>
-            </HEAD>
-            <BODY>
-                <?php
-                require_once('../Shared/MenuHeader.php');
-                require_once('../Shared/Panel.php');
+    }
+</script>
+</HEAD>
+<BODY>
+    <?php
+    require_once('../Shared/MenuHeader.php');
+    require_once('../Shared/Panel.php');
 
 
                 //foreach ($servico as $s) {
                 //	print_r($s);
                 //}
-                ?>
-            <center><h3 class="panel-title">Alterar Serviço</h3></center>
-        </div>
-        <div class="panel-body">
-            <form action="..\..\Controller\servicoController.php?opcao=4" method="POST">
+    ?>
+    <center><h3 class="panel-title">Alterar Serviço</h3></center>
+</div>
+<div class="panel-body">
+    <form action="..\..\Controller\servicoController.php?opcao=4" method="POST">
+        <div>
+            <div>
                 <div>
+                    <label>ID:</label>
                     <div>
+                        <input class="form-control" type="text" name="id_servico" value="<?php echo $servico->id_servico ?>" readonly>
+                    </div>
+                </div>
+                <div>
+                    <label>Nome do serviço:</label>
+                    <div>
+                        <input class="form-control" type="text" name="nome" value="<?php echo $servico->nome ?>">
+                    </div>
+                </div>
+                <div>
+                    <label>Valor:</label>
+                    <div>
+                        <input class="form-control" type="text" name="valor" value="<?php echo $servico->valor ?>">
+                    </div>
+                </div>
+                <div>
+                    <label>Descrição:</label>
+                    <div>
+                        <input class="form-control" type="text" name="descricao" value="<?php echo $servico->descricao ?>">
+                    </div>
+                </div>
+                <div>
+                    <label>Tipo:</label>
+                    <div>
+                        <input class="form-control" type="text" name="id_tipo" value="<?php echo $servico->id_tipo ?>">
+                    </div>
+                </div>
+                <div>
+                    <label>Datas disponíveis:</label>
+                    
+                    <?php foreach ($servico->datas as $key => $value) { ?>
                         <div>
-                            <label>ID:</label>
-                            <div>
-                                <input class="form-control" type="text" name="id_servico" value="<?php echo $servico->id_servico ?>" readonly>
-                            </div>
-                        </div>
-                        <div>
-                            <label>Nome do serviço:</label>
-                            <div>
-                                <input class="form-control" type="text" name="nome" value="<?php echo $servico->nome ?>">
-                            </div>
-                        </div>
-                        <div>
-                            <label>Valor:</label>
-                            <div>
-                                <input class="form-control" type="text" name="valor" value="<?php echo $servico->valor ?>">
-                            </div>
-                        </div>
-                        <div>
-                            <label>Descrição:</label>
-                            <div>
-                                <input class="form-control" type="text" name="descricao" value="<?php echo $servico->descricao ?>">
-                            </div>
-                        </div>
-                        <div>
-                            <label>Tipo:</label>
-                            <div>
-                                <input class="form-control" type="text" name="id_tipo" value="<?php echo $servico->id_tipo ?>">
-                            </div>
-                        </div>
-                        <div>
-                            <label>Datas disponíveis:</label>
-                            
-                            <?php foreach ($servico->datas as $key => $value) { ?>
-                                <div>
-                                    <label>Id: <input type="text" name="id_disponibilidade[<?php echo $value->id_disponibilidade ?>]" value="<?php echo $value->id_disponibilidade ?>" readonly>
-                                        Data: <input type="date" name="data[<?php echo $key ?>]" value="<?php echo $value->data ?>">
-                                        <a href='..\..\Controller\datadisponivelController.php?opcao=1&id=<?php echo $value->id_disponibilidade?>&idserv=<?php echo $servico->id_servico ?>' ><input type="button" class="btn btn-danger" value="Excluir"/>
-                                        </div></a></label>
+                            <label>Id: <input type="text" name="id_disponibilidade[<?php echo $value->id_disponibilidade ?>]" value="<?php echo $value->id_disponibilidade ?>" readonly>
+                                Data: <input type="date" name="data[<?php echo $key ?>]" value="<?php echo $value->data ?>">
+                                <a href='..\..\Controller\datadisponivelController.php?opcao=1&id=<?php echo $value->id_disponibilidade?>&idserv=<?php echo $servico->id_servico ?>' ><input type="button" class="btn btn-danger" value="Excluir"/>
+                                </div></a></label>
 
-                                <?php } ?>
+                            <?php } ?>
                             <div>   
-                                    <input type="hidden" name="hidden2" id="hidden2">
+                                <input type="hidden" name="hidden2" id="hidden2">
 
-                                </div>
-                                <input type="hidden" name="opcao" value="4">
-                                <div>
-                                    <button type="submit" class="btn btn-primary" value="Atualizar">Atualizar</button>
-                                </div>
+                            </div>
+                            <input type="hidden" name="opcao" value="4">
+                            <div>
+                                <button type="submit" class="btn btn-primary" value="Atualizar">Atualizar</button>
                             </div>
                         </div>
-                        </form>
-                        <form action="..\..\Controller\datadisponivelController.php?opcao=3" method="GET">
-                            <label>Adicionar datas ao serviço:</label>
-                                    <input type="button" value="+" onclick="AddCampos()">
-                                    <script type="text/javascript">
+                    </div>
+                </form>
+                <form action="..\..\Controller\datadisponivelController.php?opcao=3" method="GET">
+                    <label>Adicionar datas ao serviço:</label>
+                    <input type="button" value="+" onclick="AddCampos()">
+                    <script type="text/javascript">
                                         //Escrevendo o código-fonte HTML e ocultando os campos criados:
                                         for (iLoop = 1; iLoop <= totalCampos - total; iLoop++) {
                                             document.write("<span id='linha" + iLoop + "' style='display:none'><label>Data " + iLoop + 
@@ -171,18 +171,18 @@ if (isset($_SESSION['usuario'])) {
 
                                         }
                                     </script>
-                            <input type="submit" value="Enviar datas" name="submit">
-                            <input type="hidden" name="id_servico" value="<?php echo $servico->id_servico ?>">
-                            <input type="hidden" name="opcao" value="3">
-                        </form>
-                    </div>
-                    </center>
+                                    <input type="submit" value="Enviar datas" name="submit">
+                                    <input type="hidden" name="id_servico" value="<?php echo $servico->id_servico ?>">
+                                    <input type="hidden" name="opcao" value="3">
+                                </form>
+                            </div>
+                        </center>
                     </BODY>
-                    </HTML>
-                    <?php
-                } else {
-                    $erro = "Você não tem permissão de acesso para essa página!";
-                    header("Location:../Erro/erro.php?erro=" . $erro);
-                }
+                </HTML>
+                <?php
+            } else {
+                $erro = "Você não tem permissão de acesso para essa página!";
+                header("Location:../Erro/erro.php?erro=" . $erro);
             }
-            ?>
+        }
+        ?>

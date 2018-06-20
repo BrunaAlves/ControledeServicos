@@ -21,25 +21,25 @@ require_once('../Shared/Header.php');
   </div>
 
   <form action="../../Controller/servicoController.php" method="post">
-        <input type="hidden" name="opcao" value="6">
-        <br>
-        <div class="row">
-          <div class="col-md-3">
-            <label>Escolha um tipo de serviço!</label>
-          </div>
-          <div class="col-md-5">
-            <select name="id" class="form-control">
-                <?php
-                foreach ($tipos as $tipo) {
-                  echo "<option value=".$tipo->id_tipo.">".$tipo->nome."</option>";
-              }
-              ?>
-      </select>
+    <input type="hidden" name="opcao" value="6">
+    <br>
+    <div class="row">
+      <div class="col-md-3">
+        <label>Escolha um tipo de serviço!</label>
+      </div>
+      <div class="col-md-5">
+        <select name="id" class="form-control">
+          <?php
+          foreach ($tipos as $tipo) {
+            echo "<option value=".$tipo->id_tipo.">".$tipo->nome."</option>";
+          }
+          ?>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <input class="btn btn-info" type="submit" value="Buscar">
+      </div>
     </div>
-    <div class="col-md-2">
-      <input class="btn btn-info" type="submit" value="Buscar">
-    </div>
-  </div>
   </form>
   <table class="table table-striped table-bordered" align="center">
     <thead>
@@ -80,14 +80,9 @@ require_once('../Shared/Header.php');
           </td>
           
           <td>
-          <?php
-            if (isset($_SESSION['carrinho'])) {
-              $carrinho = $_SESSION['carrinho'];
-            }
-          ?>
-            <a href="..\..\Controller\carrinhoController.php?opcao=1&id=<?php echo $servico->id;?>">
-              <input type='button' class='btn btn-primary' value='Contratar'/>
-            </a>
+              <a href="..\..\Controller\carrinhoController.php?opcao=1&id=<?php echo $servico->id;?>">
+                <input type='button' class='btn btn-primary' value='Contratar'/>
+              </a>
           </td>
           <?php
         }

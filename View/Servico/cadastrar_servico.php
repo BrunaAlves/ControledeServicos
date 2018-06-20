@@ -7,23 +7,23 @@ if (isset($_SESSION['usuario'])) {
         ?>
 
         <HTML>
-            <?php
-            require_once('../Shared/Header.php');
-            ?>
-            <HEAD>
-                <TITLE>Cadastro de Serviço</TITLE>
-                <script type="text/javascript">
-                    var totalCampos = 7;
+        <?php
+        require_once('../Shared/Header.php');
+        ?>
+        <HEAD>
+            <TITLE>Cadastro de Serviço</TITLE>
+            <script type="text/javascript">
+                var totalCampos = 7;
 
         //Não altere os valores abaixo, pois são variáveis controle;
-                    var iLoop = 1;
-                    var iCount = 0;
-                    var linhaAtual;
+        var iLoop = 1;
+        var iCount = 0;
+        var linhaAtual;
 
 
-                    function AddCampos() {
-                        var hidden1 = document.getElementById("hidden1");
-                        var hidden2 = document.getElementById("hidden2");
+        function AddCampos() {
+            var hidden1 = document.getElementById("hidden1");
+            var hidden2 = document.getElementById("hidden2");
 
                         //Executar apenas se houver possibilidade de inserção de novos campos:
                         if (iCount < totalCampos) {
@@ -75,8 +75,8 @@ if (isset($_SESSION['usuario'])) {
                         }
 
         //	if(confirm("O campo que contém o valor:\n» "+campoValor+"\nserá excluído!\n\nDeseja prosseguir?")){
-                        document.getElementById("linha" + id).style.display = "none";
-                        iCount--;
+            document.getElementById("linha" + id).style.display = "none";
+            iCount--;
 
                         //Removendo o valor de hidden1:
                         if (hidden1.value.indexOf(",linha" + id) != -1) {
@@ -87,48 +87,48 @@ if (isset($_SESSION['usuario'])) {
                             hidden1.value = "";
                         }
         //    }
-                    }
-                </script>
-            </HEAD>
-            <BODY>
-                <?php
-                require_once('../Shared/MenuHeader.php');
-                require_once('../Shared/Panel.php');
-                ?>
-                <center><h3 class="panel-title">Cadastrar Serviço</h3></center>
+    }
+</script>
+</HEAD>
+<BODY>
+    <?php
+    require_once('../Shared/MenuHeader.php');
+    require_once('../Shared/Panel.php');
+    ?>
+    <center><h3 class="panel-title">Cadastrar Serviço</h3></center>
+</div>
+<div class="panel-body">
+    <form action="..\..\Controller\servicoController.php" method="POST" style="margin: 0% 0;">
+        <div>
+            <div>
+                <div>
+                    <label>Nome do serviço:</label>
+                    <div>
+                        <input class="form-control" type="text" name="nome">
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <form action="..\..\Controller\servicoController.php" method="POST" style="margin: 0% 0;">
-                        <div>
-                            <div>
-                                <div>
-                                    <label>Nome do serviço:</label>
-                                    <div>
-                                        <input class="form-control" type="text" name="nome">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label>Valor:</label>
-                                    <div>
-                                        <input class="form-control" type="text" name="valor">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label>Descrição:</label>
-                                    <div>
-                                        <input class="form-control" type="text" name="descricao">
-                                    </div>
-                                </div>
-                                <div>
-                                    <label>Tipo:</label>
-                                    <div>
-                                        <input class="form-control" type="text" name="tipo">
-                                    </div>
-                                </div>
-                                <div><br>
-                                    <label>Adicionar datas disponíveis:</label>
-                                    <input class="btn btn-info" type="button" value="+" onclick="AddCampos()">
-                                    <script type="text/javascript">
+                <div>
+                    <label>Valor:</label>
+                    <div>
+                        <input class="form-control" type="text" name="valor">
+                    </div>
+                </div>
+                <div>
+                    <label>Descrição:</label>
+                    <div>
+                        <input class="form-control" type="text" name="descricao">
+                    </div>
+                </div>
+                <div>
+                    <label>Tipo:</label>
+                    <div>
+                        <input class="form-control" type="text" name="tipo">
+                    </div>
+                </div>
+                <div><br>
+                    <label>Adicionar datas disponíveis:</label>
+                    <input class="btn btn-info" type="button" value="+" onclick="AddCampos()">
+                    <script type="text/javascript">
                                         //Escrevendo o código-fonte HTML e ocultando os campos criados:
                                         for (iLoop = 1; iLoop <= totalCampos; iLoop++) {
                                             document.write("<span id='linha" + iLoop + "' style='display:none'><label>Data " + iLoop + ": <input class='form-control' type='date' id='data" + iLoop + "' name='data[]'> <input type='button' value='Remover' onclick='RemoverCampos(\"" + iLoop + "\")'></span><label>");

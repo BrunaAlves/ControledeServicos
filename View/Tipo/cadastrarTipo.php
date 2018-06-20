@@ -7,14 +7,14 @@ if (isset($_SESSION['usuario'])) {
         ?>
 
         <html>
+        <?php
+        require_once('../Shared/Header.php');
+        ?>
+        <body>
             <?php
-            require_once('../Shared/Header.php');
+            require_once('../Shared/MenuHeader.php');
+            require_once('../Shared/Panel.php');
             ?>
-            <body>
-                <?php
-                require_once('../Shared/MenuHeader.php');
-                require_once('../Shared/Panel.php');
-                ?>
             <center>
                 <center><h3 class="panel-title">Cadastrar Tipos de Serviço</h3></center>
             </div>
@@ -34,7 +34,7 @@ if (isset($_SESSION['usuario'])) {
                         <button type="submit" class="btn btn-primary btn-lg pull-right"><span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>Salvar</button>
                     </div>
                 </form>
-        </center>
+            </center>
         </body>
         </html>
         <?php

@@ -1,13 +1,13 @@
 <HTML>
+<?php
+require_once('../Shared/Header.php');
+?>
+<BODY>
     <?php
-    require_once('../Shared/Header.php');
+    session_start();
+    require_once('../Shared/MenuHeader.php');
+    require_once('../Shared/Panel.php');
     ?>
-    <BODY>
-        <?php
-        session_start();
-        require_once('../Shared/MenuHeader.php');
-        require_once('../Shared/Panel.php');
-        ?>
 
     <center><h3 class="panel-title">Cadastro de Cliente</h3></center>
 </div>

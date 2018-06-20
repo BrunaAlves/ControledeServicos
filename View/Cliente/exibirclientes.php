@@ -6,14 +6,14 @@ if (isset($_SESSION['usuario'])) {
         ?>
 
         <HTML>
+        <?php
+        require_once('../Shared/Header.php');
+        ?>
+        <BODY>
             <?php
-            require_once('../Shared/Header.php');
+            require_once('../Shared/MenuHeader.php');
+            require_once('../Shared/Panel.php');
             ?>
-            <BODY>
-                <?php
-                require_once('../Shared/MenuHeader.php');
-                require_once('../Shared/Panel.php');
-                ?>
             <center>
                 <center><h3 class="panel-title">Lista de clientes</h3></center>
             </div>
@@ -28,15 +28,15 @@ if (isset($_SESSION['usuario'])) {
             <table class="table table-striped table-bordered" align="center">
                 <div>
                     <center>
-                    <ul class="pagination">
-                    <?php
-                    for ($i = 1; $i <= $numpaginas; $i++) {
-                        ?>
-                        <li><a href="../../Controller/clienteController.php?opcao=6&pagina=<?php echo $i ?>"><?php echo $i ?></a></li>
-                        <?php
-                    }
-                    ?>
-                    </ul>
+                        <ul class="pagination">
+                            <?php
+                            for ($i = 1; $i <= $numpaginas; $i++) {
+                                ?>
+                                <li><a href="../../Controller/clienteController.php?opcao=6&pagina=<?php echo $i ?>"><?php echo $i ?></a></li>
+                                <?php
+                            }
+                            ?>
+                        </ul>
                     </center>
                 </div>
                 <thead>
@@ -63,13 +63,13 @@ if (isset($_SESSION['usuario'])) {
                         echo"<a href='../../Controller/clienteController.php?opcao=4&id=" . $cliente->CodCli . "'><input type='button' class='btn btn-danger' value='Excluir'/></a></td>";
                     }
                     ?>
-                
+                    
                 </tbody>
             </table>
         </center>
         <div>
-                    <center>
-                    <ul class="pagination">
+            <center>
+                <ul class="pagination">
                     <?php
                     for ($i = 1; $i <= $numpaginas; $i++) {
                         ?>
@@ -77,15 +77,15 @@ if (isset($_SESSION['usuario'])) {
                         <?php
                     }
                     ?>
-                    </ul>
-                    </center>
-                </div>
-        </BODY>
-        </HTML>
-        <?php
-    } else {
-        $erro = "Você não tem permissão de acesso para essa página!";
-        header("Location:../Erro/erro.php?erro=" . $erro);
-    }
+                </ul>
+            </center>
+        </div>
+    </BODY>
+</HTML>
+<?php
+} else {
+    $erro = "Você não tem permissão de acesso para essa página!";
+    header("Location:../Erro/erro.php?erro=" . $erro);
+}
 }
 ?>

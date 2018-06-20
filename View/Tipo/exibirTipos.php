@@ -7,14 +7,14 @@ if (isset($_SESSION['usuario'])) {
         ?>
 
         <HTML>
+        <?php
+        require_once('../Shared/Header.php');
+        ?>
+        <BODY>
             <?php
-            require_once('../Shared/Header.php');
+            require_once('../Shared/MenuHeader.php');
+            require_once('../Shared/Panel.php');
             ?>
-            <BODY>
-                <?php
-                require_once('../Shared/MenuHeader.php');
-                require_once('../Shared/Panel.php');
-                ?>
             <center>
                 <center><h3 class="panel-title">Tipos de Serviço</h3></center>
             </div>
@@ -41,15 +41,15 @@ if (isset($_SESSION['usuario'])) {
                         echo"<a href='../../Controller/tipoController.php?opcao=4&id=" . $tipo->id_tipo . "'><input type='button' class='btn btn-danger' value='Excluir'/></a></td>";
                     }
                     ?>
-                    </div>
-                </tbody>
+                </div>
+            </tbody>
         </center>
-        </BODY>
-        </HTML>
-        <?php
-    } else {
-        $erro = "Você não tem permissão de acesso para essa página!";
-        header("Location:../Erro/erro.php?erro=" . $erro);
-    }
+    </BODY>
+</HTML>
+<?php
+} else {
+    $erro = "Você não tem permissão de acesso para essa página!";
+    header("Location:../Erro/erro.php?erro=" . $erro);
+}
 }
 ?>

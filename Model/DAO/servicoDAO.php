@@ -89,7 +89,7 @@ class servicoDAO {
     public function getServicosDetalhados($id) {
 
         $sql = $this->con->prepare("SELECT s.id_servico id, s.nome nome, t.nome tipo, s.valor valor FROM servicos s LEFT JOIN tipo t ON s.id_tipo= t.id_tipo WHERE s.id_tipo = :id
-");
+            ");
         $sql->bindValue('id', $id);
         $sql->execute();
         $lista = array();

@@ -1,59 +1,59 @@
 <?php
 
-    require_once('..\Model\DAO\conexao.inc');
-    require_once('..\Model\DAO\servicoDAO.php');
-    require_once('..\Model\DAO\dataDisponivelDAO.php');
+require_once('..\Model\DAO\conexao.inc');
+require_once('..\Model\DAO\servicoDAO.php');
+require_once('..\Model\DAO\dataDisponivelDAO.php');
 
-    require_once('..\Model\Servico.php');
+require_once('..\Model\Servico.php');
 
-    $opcao = (int) $_REQUEST['opcao'];
+$opcao = (int) $_REQUEST['opcao'];
 
-    if ($opcao == 1) {
+if ($opcao == 1) {
 
-        $servico = new Servico($_POST["nome"], $_POST["valor"], $_POST["descricao"], $_POST["tipo"]);
+    $servico = new Servico($_POST["nome"], $_POST["valor"], $_POST["descricao"], $_POST["tipo"]);
 
-        $datadisp = $_POST["data"];
-        $servicoDAO = new servicoDAO();
+    $datadisp = $_POST["data"];
+    $servicoDAO = new servicoDAO();
 
-        $servicoDAO->incluirServico($servico, $datadisp);
+    $servicoDAO->incluirServico($servico, $datadisp);
 
-        header("Location:servicoController.php?opcao=2");
-    }
-    if ($opcao == 2) {
+    header("Location:servicoController.php?opcao=2");
+}
+if ($opcao == 2) {
 
-        $servicoDao = new servicoDAO();
+    $servicoDao = new servicoDAO();
 
-        $lista = $servicoDao->getServicos();
+    $lista = $servicoDao->getServicos();
 
-        session_start();
+    session_start();
 
-        $_SESSION['servicos'] = $lista;
+    $_SESSION['servicos'] = $lista;
 
-        header("Location:../View/Servico/exibir_servicos.php");
-    }
-    if ($opcao == 3) {
-        $id = (int) $_REQUEST['id'];
+    header("Location:../View/Servico/exibir_servicos.php");
+}
+if ($opcao == 3) {
+    $id = (int) $_REQUEST['id'];
 
-        $servicoDao = new servicoDAO();
+    $servicoDao = new servicoDAO();
 
-        $servico = $servicoDao->getServico($id);
+    $servico = $servicoDao->getServico($id);
 
-        session_start();
-        $_SESSION['servico'] = $servico;
+    session_start();
+    $_SESSION['servico'] = $servico;
 
 
-        header("Location:../View/Servico/alterar_servico.php");
-    }
-    if ($opcao == 4) {
-        $servico = new Servico($_POST["nome"], (int) $_POST["valor"], $_POST["descricao"], $_POST["id_tipo"]);
-        $servico->setServico_id($_POST['id_servico']);
+    header("Location:../View/Servico/alterar_servico.php");
+}
+if ($opcao == 4) {
+    $servico = new Servico($_POST["nome"], (int) $_POST["valor"], $_POST["descricao"], $_POST["id_tipo"]);
+    $servico->setServico_id($_POST['id_servico']);
 
-        $servicoDAO = new servicoDAO();
+    $servicoDAO = new servicoDAO();
 
-        $servicoDAO->atualizarServico($servico);
+    $servicoDAO->atualizarServico($servico);
 
-        $idDD[] = ($_POST["id_disponibilidade"]);
-        $DD[] = ($_POST["data"]);
+    $idDD[] = ($_POST["id_disponibilidade"]);
+    $DD[] = ($_POST["data"]);
 
         /*
           foreach ($idDD as $key => $value) {
@@ -65,7 +65,7 @@
           }
          */
 
-        foreach ($DD as $key => $value) {
+          foreach ($DD as $key => $value) {
             foreach ($idDD as $keyy => $val) {
 
                 $datadisp = new DataDisponivel();
@@ -107,5 +107,5 @@
         $_SESSION['datas'] = $lista2;
 
         header("Location:../View/Servico/BuscaServico.php");
-}
-?>
+    }
+    ?>

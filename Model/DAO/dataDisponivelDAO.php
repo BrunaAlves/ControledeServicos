@@ -40,7 +40,7 @@ class dataDisponivelDAO {
 
     }
 
-     public function incluirDatasDisponiveis($idserv, Array $datadisp) {
+    public function incluirDatasDisponiveis($idserv, Array $datadisp) {
         $arrayLimpo = array_filter($datadisp); //pega somente as colunas preenchidas, ignorando vazio ou null
         
 

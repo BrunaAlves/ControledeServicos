@@ -1,19 +1,19 @@
 <HTML>
+<?php
+require_once('../Shared/Header.php');
+?>
+<BODY>
     <?php
-    require_once('../Shared/Header.php');
+
+    function formatarData($data) {
+        return date('d/m/Y', $data);
+    }
+
+    session_start();
+    $cliente = $_SESSION['cliente'];
+    require_once('../Shared/MenuHeader.php');
+    require_once('../Shared/Panel.php');
     ?>
-    <BODY>
-        <?php
-
-        function formatarData($data) {
-            return date('d/m/Y', $data);
-        }
-
-        session_start();
-        $cliente = $_SESSION['cliente'];
-        require_once('../Shared/MenuHeader.php');
-        require_once('../Shared/Panel.php');
-        ?>
 
     <center><h3 class="panel-title">Atualizar Clientes</h3></center>
 </div>
